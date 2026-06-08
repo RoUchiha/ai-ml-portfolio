@@ -1,0 +1,15 @@
+[submodule "hallucination-detector"]
+	path = hallucination-detector
+	url = https://github.com/RoUchiha/hallucination-detector.git
+[submodule "rag-eval-framework"]
+	path = rag-eval-framework
+	url = https://github.com/RoUchiha/rag-eval-framework.git
+[submodule "geval-judge"]
+	path = geval-judge
+	url = https://github.com/RoUchiha/geval-judge.git
+[submodule "prompt-regression"]
+	path = prompt-regression
+	url = https://github.com/RoUchiha/prompt-regression.git
+[submodule "llm-red-teaming"]
+	path = llm-red-teaming
+	url = https://github.com/RoUchiha/llm-red-teaming.git
