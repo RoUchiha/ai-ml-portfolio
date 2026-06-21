@@ -72,7 +72,7 @@ A collection of production-grade projects built around LLM evaluation, safety, r
 >
 > **Technical highlights**: Layered defense (parse-or-reject · single-statement · SELECT-only allowlist · full-AST action-node walk · schema identifier validation · read-only sandbox) · **100% block rate on a 26-case adversarial corpus, enforced by a test** · 66 tests / 96% coverage · Typer CLI (`query` / `explain` / `audit`)
 >
-> **🛡️ [Live demo](https://huggingface.co/spaces/rosingh/txt2sql-guardrails)** — paste `SELECT * FROM users; DROP TABLE users` and watch it get blocked.
+> **🛡️ [Live demo](https://huggingface.co/spaces/rosingh/ai-ml-portfolio-demos)** — paste `SELECT * FROM users; DROP TABLE users` and watch it get blocked.
 
 ---
 
@@ -83,7 +83,7 @@ A collection of production-grade projects built around LLM evaluation, safety, r
 >
 > **Technical highlights**: Explainable heuristic classifier (87.5% accuracy on a labeled set) · tiered routing with single-escalation fallback · counterfactual savings accounting (escalations counted honestly) · OpenAI-compatible proxy with `X-Router-*` headers · 26 tests / 91% coverage · `tiktoken` cost estimation
 >
-> **💸 [Live demo](https://huggingface.co/spaces/rosingh/cost-router)** — route a prompt and watch the tier + savings vs frontier-only.
+> **💸 [Live demo](https://huggingface.co/spaces/rosingh/ai-ml-portfolio-demos)** — route a prompt and watch the tier + savings vs frontier-only.
 
 ---
 
@@ -94,7 +94,7 @@ A collection of production-grade projects built around LLM evaluation, safety, r
 >
 > **Technical highlights**: Concurrent critics via `asyncio.gather` · deterministic consensus (mean score, frequency-prioritized de-duped issues) · tag-based **routing** to specialist critics · **human-in-the-loop** approval gate · best-of-rounds selection · 21 tests / 94% coverage · two purpose-built mock providers (scripted for tests, heuristic for the live demo)
 >
-> **🔁 [Live demo](https://huggingface.co/spaces/rosingh/multiagent-critique)** — enter a task and watch the consensus score climb round over round.
+> **🔁 [Live demo](https://huggingface.co/spaces/rosingh/ai-ml-portfolio-demos)** — enter a task and watch the consensus score climb round over round.
 
 ---
 
@@ -105,7 +105,7 @@ A collection of production-grade projects built around LLM evaluation, safety, r
 >
 > **Technical highlights**: Exact path provably skips embedding (tested invariant) · cosine NN over numpy · **conservative 0.95 threshold + near-miss calibration log** · TTL staleness guard with injectable clock · LRU eviction · optional **Redis** backend behind the same index contract · sentence-transformer embeddings in the demo · 17 tests / 93% coverage
 >
-> **⚡ [Live demo](https://huggingface.co/spaces/rosingh/semantic-cache)** — ask a question two different ways; the second is a semantic hit.
+> **⚡ [Live demo](https://huggingface.co/spaces/rosingh/ai-ml-portfolio-demos)** — ask a question two different ways; the second is a semantic hit.
 
 ---
 
