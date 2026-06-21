@@ -109,6 +109,17 @@ A collection of production-grade projects built around LLM evaluation, safety, r
 
 ---
 
+### 10. [Hybrid RAG with Verified Citations](https://github.com/RoUchiha/rag-citations)
+> **What**: A RAG pipeline that retrieves with **hybrid search** (dense embeddings + sparse BM25, fused with Reciprocal Rank Fusion), generates grounded answers with inline `[chunk_id]` citations, and **verifies every citation** — each claim must map to a retrieved span that actually supports it. Hallucinated or unsupported citations are stripped.
+>
+> **Why it matters**: RAG's failure mode isn't retrieval, it's *confident fabrication with fake citations*. Hybrid search fixes recall (semantics + exact keywords); citation verification fixes trust. Together they're what makes a RAG answer auditable rather than plausible.
+>
+> **Technical highlights**: Reciprocal Rank Fusion over dense+BM25 (surfaces keyword chunks pure-vector search misses) · token-aware chunking with stable, idempotent ids · claim-level citation verification (cosine claim↔span) · strip/flag policies · no-answer path when evidence is weak · optional ChromaDB store · 19 tests / 95% coverage
+>
+> **🔎 [Live demo](https://huggingface.co/spaces/rosingh/ai-ml-portfolio-demos)** — ask a grounded question and watch each citation get verified.
+
+---
+
 ## Skill Map
 
 ```

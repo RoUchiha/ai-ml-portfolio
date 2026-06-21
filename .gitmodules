@@ -25,3 +25,6 @@
 [submodule "semantic-cache"]
 	path = semantic-cache
 	url = https://github.com/RoUchiha/semantic-cache.git
+[submodule "rag-citations"]
+	path = rag-citations
+	url = https://github.com/RoUchiha/rag-citations.git
