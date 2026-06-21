@@ -28,3 +28,6 @@
 [submodule "rag-citations"]
 	path = rag-citations
 	url = https://github.com/RoUchiha/rag-citations.git
+[submodule "agent-orchestration"]
+	path = agent-orchestration
+	url = https://github.com/RoUchiha/agent-orchestration.git

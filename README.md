@@ -120,6 +120,17 @@ A collection of production-grade projects built around LLM evaluation, safety, r
 
 ---
 
+### 11. [Agent Orchestration (memory + HITL)](https://github.com/RoUchiha/agent-orchestration)
+> **What**: A production-shaped agent runtime implementing the full **plan → act → observe → reflect** loop, backed by **persistent memory** (token-budgeted working memory + durable long-term recall) and **human-in-the-loop** approval gates for sensitive actions. Runs are **durable and resumable** — every step is persisted to SQLite, so a killed run resumes with no duplicated side-effects.
+>
+> **Why it matters**: The gap between a demo agent and a production one is exactly this: what happens when a step needs human sign-off, when the process crashes mid-run, or when the agent needs to remember something from last week. This is the runtime that handles those.
+>
+> **Technical highlights**: tool registry with JSON schemas + sensitivity flags · HITL approval that *provably* blocks rejected sensitive calls (spy=0 test) · token-budgeted working memory with summarization · durable long-term vector recall across runs · **idempotent crash-resume** (provider is a pure function of step index) · `max_steps`/budget guards · 22 tests / 94% coverage
+>
+> **🤖 [Live demo](https://huggingface.co/spaces/rosingh/ai-ml-portfolio-demos)** — give the agent a task and watch the plan/act/observe loop.
+
+---
+
 ## Skill Map
 
 ```
