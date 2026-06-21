@@ -13,3 +13,9 @@
 [submodule "llm-red-teaming"]
 	path = llm-red-teaming
 	url = https://github.com/RoUchiha/llm-red-teaming.git
+[submodule "cost-router"]
+	path = cost-router
+	url = https://github.com/RoUchiha/cost-router.git
+[submodule "txt2sql-guardrails"]
+	path = txt2sql-guardrails
+	url = https://github.com/RoUchiha/txt2sql-guardrails.git

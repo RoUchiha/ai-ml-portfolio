@@ -2,7 +2,7 @@
 
 **Roshaan Singh** — AI/ML Engineer
 
-A collection of five production-grade projects built around LLM evaluation, safety, and reliability engineering. Each project solves a real problem that teams running LLMs in production face — and each one was built from scratch, not scaffolded from a tutorial.
+A collection of production-grade projects built around LLM evaluation, safety, reliability, and cost engineering. Each project solves a real problem that teams running LLMs in production face — and each one was built from scratch, not scaffolded from a tutorial.
 
 > Built as applied capstone work from the **[UT Austin AI & Machine Learning](https://onlineexeced.mccombs.utexas.edu/online-ai-machine-learning-course)** program (McCombs School of Business, 23-week executive program).
 
@@ -65,6 +65,28 @@ A collection of five production-grade projects built around LLM evaluation, safe
 
 ---
 
+### 6. [Text-to-SQL with AST Guardrails](https://github.com/RoUchiha/txt2sql-guardrails)
+> **What**: Natural language → SQL with a hard guardrail layer that **statically blocks destructive queries before they execute**. The guard analyzes the parsed SQL **AST (via sqlglot, never regex)**, runs **independently of the LLM**, defaults to read-only, and executes in a row/time-capped sandbox.
+>
+> **Why it matters**: The moment you let an LLM write SQL against a real database, a jailbroken or confused generation can `DROP`, `DELETE`, or exfiltrate data. This layer guarantees that can't happen — a malicious generation is blocked at the AST before anything touches the DB.
+>
+> **Technical highlights**: Layered defense (parse-or-reject · single-statement · SELECT-only allowlist · full-AST action-node walk · schema identifier validation · read-only sandbox) · **100% block rate on a 26-case adversarial corpus, enforced by a test** · 66 tests / 96% coverage · Typer CLI (`query` / `explain` / `audit`)
+>
+> **🛡️ [Live demo](https://huggingface.co/spaces/rosingh/txt2sql-guardrails)** — paste `SELECT * FROM users; DROP TABLE users` and watch it get blocked.
+
+---
+
+### 7. [LLM Cost Router](https://github.com/RoUchiha/cost-router)
+> **What**: Routes each LLM request to the **cheapest model that can satisfy it** — a heuristic complexity classifier picks a tier, an optional verify step escalates only when quality is low, and honest telemetry reports savings against a frontier-only baseline. Ships an OpenAI-compatible FastAPI proxy.
+>
+> **Why it matters**: Always calling a frontier model is the default — and it's how teams overspend 2–5×. Most requests are trivial. Routing them to a cheaper tier cuts 40–60% of spend with no quality loss on the work that doesn't need the big model.
+>
+> **Technical highlights**: Explainable heuristic classifier (87.5% accuracy on a labeled set) · tiered routing with single-escalation fallback · counterfactual savings accounting (escalations counted honestly) · OpenAI-compatible proxy with `X-Router-*` headers · 26 tests / 91% coverage · `tiktoken` cost estimation
+>
+> **💸 [Live demo](https://huggingface.co/spaces/rosingh/cost-router)** — route a prompt and watch the tier + savings vs frontier-only.
+
+---
+
 ## Skill Map
 
 ```
@@ -75,7 +97,7 @@ LLM Evaluation            ██████████████████
 AI Safety                 ████████████████████  red-teaming, hallucination detection, responsible AI
 MLOps / CI-CD             ████████████████████  GitHub Actions, JUnit XML, baseline diffing
 Python / Data             ████████████████████  Pydantic v2, pandas, asyncio, pytest, typer, rich
-Deployment                ████████████████████  Streamlit, FastAPI, Docker-ready packaging
+Deployment                ████████████████████  Streamlit, FastAPI, Gradio on HF Spaces, Docker-ready
 ```
 
 ---
