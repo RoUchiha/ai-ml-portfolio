@@ -87,6 +87,17 @@ A collection of production-grade projects built around LLM evaluation, safety, r
 
 ---
 
+### 8. [Multi-Agent Critique Loop](https://github.com/RoUchiha/multiagent-critique)
+> **What**: An evaluator-optimizer system — a generator writes an answer, **multiple critic agents review it in parallel** against a rubric, an aggregator merges their feedback into a consensus, and the generator **revises** until quality passes a bar. Returns the best candidate, full round history, and score trajectory.
+>
+> **Why it matters**: Single-shot generation plateaus at "good enough." Structured self-critique is how you push past it — measurably. This implements the evaluator-optimizer pattern that underpins modern agent quality loops, with the cost trade quantified honestly.
+>
+> **Technical highlights**: Concurrent critics via `asyncio.gather` · deterministic consensus (mean score, frequency-prioritized de-duped issues) · tag-based **routing** to specialist critics · **human-in-the-loop** approval gate · best-of-rounds selection · 21 tests / 94% coverage · two purpose-built mock providers (scripted for tests, heuristic for the live demo)
+>
+> **🔁 [Live demo](https://huggingface.co/spaces/rosingh/multiagent-critique)** — enter a task and watch the consensus score climb round over round.
+
+---
+
 ## Skill Map
 
 ```

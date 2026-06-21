@@ -19,3 +19,6 @@
 [submodule "txt2sql-guardrails"]
 	path = txt2sql-guardrails
 	url = https://github.com/RoUchiha/txt2sql-guardrails.git
+[submodule "multiagent-critique"]
+	path = multiagent-critique
+	url = https://github.com/RoUchiha/multiagent-critique.git
