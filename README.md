@@ -98,6 +98,17 @@ A collection of production-grade projects built around LLM evaluation, safety, r
 
 ---
 
+### 9. [Semantic Cache for LLM Calls](https://github.com/RoUchiha/semantic-cache)
+> **What**: A caching layer that returns a stored response when an incoming prompt is **semantically equivalent** (not just byte-identical) to a previous one — killing redundant LLM calls. Exact-hash fast path, semantic nearest-neighbor lookup, TTL + LRU eviction, per-namespace isolation, and savings telemetry.
+>
+> **Why it matters**: Production traffic is full of near-duplicate prompts. A byte-exact cache misses all of them; a semantic cache catches paraphrases and recovers the spend. The hard part is doing it *safely* — a false hit serves a wrong answer — which is the whole design focus here.
+>
+> **Technical highlights**: Exact path provably skips embedding (tested invariant) · cosine NN over numpy · **conservative 0.95 threshold + near-miss calibration log** · TTL staleness guard with injectable clock · LRU eviction · optional **Redis** backend behind the same index contract · sentence-transformer embeddings in the demo · 17 tests / 93% coverage
+>
+> **⚡ [Live demo](https://huggingface.co/spaces/rosingh/semantic-cache)** — ask a question two different ways; the second is a semantic hit.
+
+---
+
 ## Skill Map
 
 ```

@@ -22,3 +22,6 @@
 [submodule "multiagent-critique"]
 	path = multiagent-critique
 	url = https://github.com/RoUchiha/multiagent-critique.git
+[submodule "semantic-cache"]
+	path = semantic-cache
+	url = https://github.com/RoUchiha/semantic-cache.git
