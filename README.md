@@ -6,6 +6,8 @@ A collection of production-grade projects built around LLM evaluation, safety, r
 
 > Built as applied capstone work from the **[UT Austin AI & Machine Learning](https://onlineexeced.mccombs.utexas.edu/online-ai-machine-learning-course)** program (McCombs School of Business, 23-week executive program).
 
+> 📖 **New to these topics?** Read [**ANALYSIS.md**](ANALYSIS.md) — a plain-English deep-dive into each infrastructure project (the problem, how it works, the clever bit, and the limits), with real-world analogies and no jargon.
+
 ---
 
 ## The Projects
